@@ -1,0 +1,248 @@
+/*===== GOOGLE FONTS =====*/
+
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap");
+
+/* Mobile First*/
+
+.about {
+    padding: 0;
+    margin: 0;
+}
+
+.about>h1 {
+    margin: 0;
+    padding: 0;
+}
+
+html,
+body {
+    margin: 0;
+    padding: 0;
+}
+
+.header {
+    width: 100%;
+    font-size: 18px;
+    z-index: 9;
+    position: relative;
+    background-color: black;
+}
+
+.header>.menu {
+    display: flex;
+    flex-direction: row;
+}
+
+.header>.menu>.left,
+.header>.menu>.right,
+.header>.menu>.middle {
+    display: flex;
+    align-items: center;
+}
+
+.header>.menu>.left {
+    flex: 2;
+    justify-content: center;
+}
+
+.header>.menu>.middle {
+    flex: 1;
+    justify-content: flex-end;
+}
+
+
+/*.header>.menu>.right {
+    flex: none;
+}/*
+
+
+/* hide right side*/
+
+.header>.menu>.right>a {
+    display: none;
+}
+
+
+/* Navigation Menu */
+
+.header>.menu>.middle>nav {
+    display: none;
+    top: 58px;
+    left: 13px;
+    right: 13px;
+    padding: 5px 0;
+    position: absolute;
+    overflow: hidden;
+    box-shadow: 0 -1px 3px rgba(0, 0, 0, 0.02), 0 1px 2px rgba(0, 0, 0, 0.05), 0 3px 4px rgba(0, 0, 0, 0.05), 0 5px 8px rgba(0, 0, 0, 0.05), 0 16px 16px rgba(0, 0, 0, 0.05);
+    border-radius: 8px;
+    background-color: #ffffff;
+}
+
+.header>.menu>.middle>nav.open {
+    display: block;
+}
+
+.header>.menu>.middle>nav>ul {
+    margin: 0;
+    padding: 0;
+}
+
+.header>.menu>.middle>nav>ul>li {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.header>.menu>.middle>nav>ul>li>a {
+    color: #52606d;
+    display: block;
+    padding: 12px 20px;
+    font-weight: 500;
+    text-decoration: none;
+}
+
+.header>.menu>.middle>nav>ul>li a.active,
+.header>.menu>.middle>nav>ul>li a:active {
+    background-color: #f5f7fa;
+}
+
+.header>.menu>.middle>nav>ul>li a i {
+    color: #9aa5b1;
+    margin-left: 5px;
+}
+
+
+/**
+ * Override hamburgers component by Johnathan Suh.
+ * 
+ * @link https://github.com/johnsuh/hamburgers
+ * @author Johnathan Suh <hello@johnsuh.com>
+ * @override Hamburgers Package by Johnathan Suh
+ **/
+
+.hamburger {
+    padding: 15px !important;
+}
+
+.hamburger>.hamburger-box {
+    width: 28px;
+    height: 28px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.hamburger>.hamburger-box>.hamburger-inner,
+.hamburger>.hamburger-box>.hamburger-inner::before,
+.hamburger>.hamburger-box>.hamburger-inner::after {
+    width: 24px;
+    height: 2px;
+    background-color: #ffffff !important;
+}
+
+.hamburger>.hamburger-box>.hamburger-inner::before {
+    top: -8px;
+}
+
+.hamburger>.hamburger-box>.hamburger-inner::after {
+    bottom: -8px;
+}
+
+
+/* Media Queries for bigger size Screen*/
+
+@media (min-width: 640px) {
+    /* min-width means "not less than" */
+    .header {
+        font-size: 18px;
+        padding-top: 10px;
+        padding-bottom: 10px;
+        padding-left: 5px;
+    }
+    .header>.menu>.middle>.hamburger {
+        display: none;
+        /* hides hamburger button and middle section */
+    }
+    .header>.menu>.left>#nav__title {
+        padding-left: 20px;
+        font-size: 20px;
+    }
+    /*Restyle nav-menu*/
+    .header>.menu>.middle>nav {
+        top: 0;
+        left: 0;
+        display: block;
+        overflow: visible;
+        position: relative;
+        box-shadow: none;
+        padding-left: 25px;
+        background-color: transparent;
+        padding-right: 25px;
+    }
+    .header>.menu>.middle>nav>ul {
+        display: flex;
+        position: relative;
+    }
+    .header>.menu>.middle>nav>ul>li {
+        padding: 0 4px;
+        z-index: 10;
+    }
+    .header>.menu>.middle>nav>ul>li>a {
+        color: #7b8794;
+        padding: 10px 12px;
+        display: flex;
+        align-items: center;
+        border-radius: 5px;
+        font-size: 17px;
+    }
+    .header>.menu>.middle>nav>ul>li>a.active {
+        cursor: default;
+        color: #ffffff;
+        background-color: #323f4b;
+    }
+    .header>.menu>.middle>nav>ul>li>a:not(.active):active {
+        color: #52606d;
+    }
+    .header>.menu>.middle>nav>ul>li:hover>a:not(.active),
+    .header>.menu>.middle>nav>ul>li:active>a:not(.active) {
+        background-color: #1f2933;
+    }
+    /*Adjust flex*/
+    .header>.menu>.left {
+        flex: 1;
+        justify-content: center;
+    }
+    .header>.menu>.middle {
+        flex: 1;
+        justify-content: center;
+    }
+    .header>.menu>.right {
+        flex: 1;
+        justify-content: center;
+        display: none;
+    }
+}
+
+@media (min-width: 1280px) {
+    /* min-width means "not less than" */
+    .header {
+        padding-left: 100px;
+        padding-right: 100px;
+        padding: 10px 10px;
+    }
+    .header>.menu>.middle>nav>ul>li>a {
+        font-size: 17px;
+    }
+    .header>.menu>.left>#nav__title {
+        font-size: 20px;
+    }
+}
+
+@media (min-width: 1440px) {
+    /* min-width means "not less than" */
+    .header {
+        padding-left: 18%;
+        padding-right: 18%;
+        padding: 10px 10px;
+    }
+}
